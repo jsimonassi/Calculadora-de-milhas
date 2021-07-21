@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/all.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <title>Calculadora de milhas</title>
+</head>
+
+<body>
+    <div class="imgContainer">
+        <div>
+            <h4 class=title>Calculadora de milhas</h4>
+            <div class=details>/////////////////////////////////</div>
+        </div>
+    </div>
+    <div class=container>
+        <br>
+        <div>
+            <p>Descubra quantas milhas você perde por ano, veja quanto dinheiro você está jogando fora e quantos países
+                está deixando de conhecer.</p>
+        </div>
+        <br>
+        <div id=spents>
+            <div class=spentcard>
+                <div class="row spent_header">
+                    <h3 class=spenttitle>Gasto 1</h3>
+                </div>
+                <div class="form-group myform">
+                    <label class=labelspent for="exampleFormControlSelect1">Tipo de gasto:</label>
+                    <select class="form-control" id="options_spent_0" oninput=getCardValues(0)>
+                        <option selected="selected">Selecione uma opção</option>
+                        <option>Cartão de crédito</option>
+                        <option>Pagamento de Contas</option>
+                        <option>Supermercados</option>
+                        <option>Farmácia</option>
+                        <option>Gasolina</option>
+                        <option>Uber</option>
+                        <option>Eletrodomésticos</option>
+                        <option>Material de construção</option>
+                        <option>Diárias em hotel</option>
+                        <option>Aluguel de carros</option>
+                    </select>
+                    <small class=error id=box1_0 >Este campo não pode ser vazio</small>
+                </div>
+                <div class="form-group myform">
+                    <label class=labelspent for="exampleFormControlSelect1">Valor:</label>
+                    <select class="form-control" id="values_spent_0" oninput=getScoreValue(0)>
+                    </select>
+                    <small class=error id=box2_0 >Este campo não pode ser vazio</small>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="buttons">
+            <div>
+                <button id='newSpentBtn' class="newSpentBtn">Novo gasto</a>
+                <button id='resultBtn' class="resultBtn">CALCULAR</a>
+            </div>
+        </div>
+        <div class=result id=result>
+            <hr/>
+            <p>Você está perdendo aproximadamente</p>
+            <div class=result_title id=result_title>
+            </div>
+            <p>pontos.</p>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery-3.5.1.js"></script>
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
