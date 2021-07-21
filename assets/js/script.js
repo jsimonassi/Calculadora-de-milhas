@@ -137,7 +137,7 @@ function generateCardOptions(spentType, valuesSpentObj) {
 function removeSpent(id){
    byebye = currentSpents.findIndex(obj => obj.id === id);
    if(byebye > -1){
-      $(`#spent_${id}`).fadeOut(600);
+      $(`#spent_${id}`).remove();
       currentSpents.splice(byebye, 1);
    }
 }

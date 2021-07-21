@@ -2,6 +2,7 @@
    padding-left: 5%;
    padding-right: 5%;
    text-align: justify;
+   margin-bottom: 50px;
 }
 
 .imgContainer {
@@ -62,7 +63,7 @@
    width: 70vw;
    max-width: 350px;
    font-size: 3vh;
-   font-weight: 100;
+   font-weight: 300;
    padding: 25px;
    background-color: #333399;
    display: inline-block;
@@ -91,10 +92,11 @@ button:focus { outline: none; }
    outline:none;
    line-height: 2px;
    color: #333399;
+   background-color: #ffffff;
    width: 70vw;
    max-width: 350px;
    font-size: 3vh;
-   font-weight: 200;
+   font-weight: 400;
    padding: 25px;
    display: inline-block;
    cursor: pointer;
@@ -123,7 +125,7 @@ button:focus { outline: none; }
    color: #FFFFFF;
    min-width: 160px;
    font-size: 2vh;
-   font-weight: 200;
+   font-weight: 300;
    padding-top: 15px;
    padding-bottom: 15px;
    background-color: #333399;
