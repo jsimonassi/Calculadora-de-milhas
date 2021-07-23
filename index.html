@@ -12,15 +12,19 @@
 
 <body>
     <div class="imgContainer">
-        <div>
-            <h4 class=title>Calculadora de milhas</h4>
-            <div class=details>/////////////////////////////////</div>
+        <div class="webtitle">
+            <!-- <h4 class=title>Calculadora de Milhas</h4> -->
         </div>
     </div>
     <div class=container>
         <br>
         <div>
-            <p>Descubra quantas milhas você perde por ano, veja quanto dinheiro você está jogando fora e quantos países
+            <div class=title_container>
+                <h4 class=title>Calculadora de Milhas</h4>
+                <br>
+            </div>
+            <p class="desc">Descubra quantas milhas você perde por ano, veja quanto dinheiro você está jogando fora e
+                quantos países
                 está deixando de conhecer.</p>
         </div>
         <br>
@@ -39,18 +43,18 @@
                         <option>Farmácia</option>
                         <option>Gasolina</option>
                         <option>Uber</option>
-                        <option>Eletrodomésticos</option>
+                        <option>Eletrodomésticos ou celulares</option>
                         <option>Material de construção</option>
                         <option>Diárias em hotel</option>
                         <option>Aluguel de carros</option>
                     </select>
-                    <small class=error id=box1_0 >Este campo não pode ser vazio</small>
+                    <small class=error id=box1_0>Este campo não pode ser vazio</small>
                 </div>
                 <div class="form-group myform">
                     <label class=labelspent for="exampleFormControlSelect1">Valor:</label>
                     <select class="form-control" id="values_spent_0" oninput=getScoreValue(0)>
                     </select>
-                    <small class=error id=box2_0 >Este campo não pode ser vazio</small>
+                    <small class=error id=box2_0>Este campo não pode ser vazio</small>
                 </div>
             </div>
         </div>
@@ -58,15 +62,39 @@
         <div class="buttons">
             <div>
                 <button id='newSpentBtn' class="newSpentBtn">Novo gasto</a>
-                <button id='resultBtn' class="resultBtn">CALCULAR</a>
+                    <button id='resultBtn' class="resultBtn">CALCULAR</a>
             </div>
         </div>
-        <div class=result id=result>
-            <hr/>
+        <!-- <div class="result" id="result">
+            <hr>
             <p>Você está perdendo aproximadamente</p>
             <div class=result_title id=result_title>
             </div>
-            <p>pontos.</p>
+            <p>milhas.</p>
+        </div> -->
+    </div>
+
+
+    <!-- Modal de resultado -->
+    <div class="modal fade" id="resultModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body resultModal" id=resultModal>
+                    <p>Você está perdendo aproximadamente</p>
+                    <div class=result_title id=result_title_modal>
+                    </div>
+                    <p>milhas.</p>
+                    <div id="notrip">
+                    </div>
+                    <table class="table table-striped" id="table">
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" oninput=resetStates()>Calcular novamente</button>
+                </div>
+            </div>
         </div>
     </div>
 
