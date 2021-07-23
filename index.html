@@ -76,8 +76,8 @@
 
 
     <!-- Modal de resultado -->
-    <div class="modal fade" id="resultModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="resultModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body resultModal" id=resultModal>
@@ -87,17 +87,19 @@
                     <p>milhas.</p>
                     <div id="notrip">
                     </div>
-                    <table class="table table-striped" id="table">
-                    </table>
+                    <!-- <table class="table table-striped" id="table">
+                    </table> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" oninput=resetStates()>Calcular novamente</button>
+                    <button id="resetPage" type="button" class="btn btn-primary" data-dismiss="modal">Calcular
+                        novamente</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script> -->
     <script src="assets/js/jquery-3.5.1.js"></script>
     <script src="assets/js/popper.js"></script>
     <script src="assets/js/bootstrap.js"></script>

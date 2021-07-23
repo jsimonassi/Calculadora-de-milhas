@@ -183,10 +183,6 @@ function resetErros(formField, id) {
    }
 }
 
-function resetStates() {
-   console.log("Resetar tudo!!");
-}
-
 function setTravelsExamples(score) {
    $('#notrip').empty();
    if (score < 4000) {
@@ -253,7 +249,7 @@ function setTravelsExamples(score) {
       $('#notrip').append(`<p>Todo o mundo!</p>`);
    }
 
-   setTableContent();
+   //setTableContent();
 }
 
 function setTableContent() {
@@ -262,7 +258,7 @@ function setTableContent() {
    $('#table').append('<thead><tr><th scope="col">#</th><th scope="col">Tipo</th><th scope="col">Valor</th><th scope="col">Milhas</th></tr></thead><tbody>');
 
    currentSpents.forEach(spent => {
-      $('#table').append(`<tr><th scope="row">${spent.id +1}</th><td>${spent.type}</td><td>${spent.value}</td><td>${parseInt(spent.score).toLocaleString('pt-BR')}</td></tr>`);      
+      $('#table').append(`<tr><th scope="row">${spent.id + 1}</th><td>${spent.type}</td><td>${spent.value}</td><td>${parseInt(spent.score).toLocaleString('pt-BR')}</td></tr>`);
    });
 
    $('#table').append('</tbody>');
@@ -306,4 +302,9 @@ $(document).ready(function () {
          .fadeIn(600);
       $('#spents').append(htmlSpent);
    });
+
+   $('#resetPage').click(function(){
+      window.location.reload();
+   })
+
 });
