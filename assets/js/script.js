@@ -3,16 +3,16 @@
 //Tipos disponívis atualmente.
 //Adicionar aqui e nas views caso seja necessário adicionar novos tipos
 const SPENT_TYPES = {
-   CREDIT_CARD: 'Cartão de crédito',
-   BILL_PAYMENT: 'Pagamento de Contas',
-   SUPERMARKET: 'Supermercados',
-   DRUGSTORE: 'Farmácia',
-   GASOLINE: 'Gasolina',
-   UBER: 'Uber',
-   HOME_APPLIANCES: 'Eletrodomésticos ou celulares',
-   CONSTRUCTION_MATERIAL: 'Material de construção',
-   HOTEL_RATES: 'Diárias em hotel',
-   CAR_RENTAL: 'Aluguel de carros'
+   CREDIT_CARD: 'Cartão de crédito - Gasto mensal',
+   BILL_PAYMENT: 'Pagamento de Contas - Gasto mensal',
+   SUPERMARKET: 'Supermercados - Gasto mensal',
+   DRUGSTORE: 'Farmácia - Gasto mensal',
+   GASOLINE: 'Gasolina - Gasto mensal',
+   UBER: 'Uber - Gasto mensal',
+   HOME_APPLIANCES: 'Eletrodomésticos ou celulares - Gasto anual',
+   CONSTRUCTION_MATERIAL: 'Material de construção - Gasto anual',
+   HOTEL_RATES: 'Diárias em hotel - Gasto anual',
+   CAR_RENTAL: 'Aluguel de carros - Gasto anual'
 };
 
 //Array que controla os gastos atuais
@@ -29,7 +29,6 @@ function getCardValues(id) {
    var valuesSpentObj = $(`#values_spent_${id}`);
    valuesSpentObj.empty();
    generateCardOptions(spentType, valuesSpentObj);
-   console.log("Current spents: ", currentSpents);
 }
 
 /**
@@ -185,68 +184,84 @@ function resetErros(formField, id) {
 
 function setTravelsExamples(score) {
    $('#notrip').empty();
-   if (score < 4000) {
+   if (Math.floor(score / 5999) <= 0) {
       return;
    }
    $('#notrip').append(`<hr></hr>`);
-   $('#notrip').append(`<strong>Com essa quantidade de milhas você poderia comprar passagens como: </strong><br>`);
+   $('#notrip').append(`<strong>Você poderia trocar essa quantidade de milhas por: </strong><br>`);
    $('#notrip').append(`<hr></hr>`);
-
-   if (score < 5999) {
-      $('#notrip').append(`<p>Rio - São Paulo</p>`);
-      $('#notrip').append(`<p>Curitiba – Porto Alegre</p>`);
-      $('#notrip').append(`<p>Brasília – Goiânia</p>`);
-      $('#notrip').append(`<p>Belo Horizonte – Vitória</p>`);
-      $('#notrip').append(`<p>Natal – Fortaleza</p>`);
+   if (Math.floor(score / 5999) > 0) {
+      $('#notrip').append(`<p>${Math.floor(score / 5999)} passagens</p>`);
+      $('#notrip').append(`<p>Rio - São Paulo ou</p>`);
+      $('#notrip').append(`<p>Curitiba – Porto Alegre ou</p>`);
+      $('#notrip').append(`<p>Brasília – Goiânia ou</p>`);
+      $('#notrip').append(`<p>DIVERSOS OUTROS TRECHOS SIMILARES</p>`);
    }
 
-   else if (score < 9999) {
-      $('#notrip').append(`<p>Recife - Salvador</p>`);
-      $('#notrip').append(`<p>Cuiabá – Campo Grande</p>`);
-      $('#notrip').append(`<p>João Pessoa - Aracajú</p>`);
-      $('#notrip').append(`<p>São Luiz - Teresina</p>`);
-      $('#notrip').append(`<p>Belém – Macapá</p>`);
+   if (Math.floor(score / 9999) > 0) {
+      $('#notrip').append(`<hr></hr>`);
+      $('#notrip').append(`<strong>OU</strong>`);
+      $('#notrip').append(`<hr></hr>`);
+      $('#notrip').append(`<p>${Math.floor(score / 9999)} passagens</p>`);
+      $('#notrip').append(`<p>Recife - Salvador ou</p>`);
+      $('#notrip').append(`<p>Cuiabá – Campo Grande ou</p>`);
+      $('#notrip').append(`<p>Belo Horizonte - Florianópolis ou</p>`);
+      $('#notrip').append(`<p>DIVERSOS OUTROS TRECHOS SIMILARES</p>`);
    }
 
-   else if (score < 19999) {
-      $('#notrip').append(`<p>São Paulo – Porto Alegre</p>`);
-      $('#notrip').append(`<p>Salvador – Rio</p>`);
-      $('#notrip').append(`<p>Manaus – Belém</p>`);
-      $('#notrip').append(`<p>Maceió – Palmas</p>`);
-      $('#notrip').append(`<p>Porto Velho – Boa Vista</p>`);
+
+   if (Math.floor(score / 19999) > 0) {
+      $('#notrip').append(`<hr></hr>`);
+      $('#notrip').append(`<strong>OU</strong>`);
+      $('#notrip').append(`<hr></hr>`);
+      $('#notrip').append(`<p>${Math.floor(score / 19999)} passagens</p>`);
+      $('#notrip').append(`<p>Manaus – Belém ou</p>`);
+      $('#notrip').append(`<p>Maceió – Palmas ou</p>`);
+      $('#notrip').append(`<p>Porto Velho – Boa Vista ou</p>`);
+      $('#notrip').append(`<p>DIVERSOS OUTROS TRECHOS SIMILARES</p>`);
    }
 
-   else if (score < 29999) {
-      $('#notrip').append(`<p>Rio – Buenos Aires (Argentina)</p>`);
-      $('#notrip').append(`<p>São Paulo – Santiago (Chile)</p>`);
-      $('#notrip').append(`<p>Belo Horizonte – Assunção (Paraguai)</p>`);
-      $('#notrip').append(`<p>Manaus – Orlando (EUA)</p>`);
-      $('#notrip').append(`<p>Florianópolis – Machu Picchu (Peru)</p>`);
+
+   if (Math.floor(score / 29999) > 0) {
+      $('#notrip').append(`<hr></hr>`);
+      $('#notrip').append(`<strong>OU</strong>`);
+      $('#notrip').append(`<hr></hr>`);
+      $('#notrip').append(`<p>${Math.floor(score / 29999)} passagens</p>`);
+      $('#notrip').append(`<p>Rio de Janeiro – Buenos Aires (Argentina) ou</p>`);
+      $('#notrip').append(`<p>São Paulo – Santiago (Chile) ou</p>`);
+      $('#notrip').append(`<p>Belo Horizonte – Assunção (Paraguai) ou</p>`);
+      $('#notrip').append(`<p>DIVERSOS OUTROS TRECHOS SIMILARES</p>`);
+
    }
 
-   else if (score < 44999) {
-      $('#notrip').append(`<p>São Paulo – Cancún (México)</p>`);
-      $('#notrip').append(`<p>Belo Horizonte – Punta Cana (Rep. Dominicana)</p>`);
-      $('#notrip').append(`<p>Belo Horizonte – Assunção (Paraguai)</p>`);
-      $('#notrip').append(`<p>Manaus – Orlando (EUA)</p>`);
-      $('#notrip').append(`<p>Florianópolis – Machu Picchu (Peru)</p>`);
+   if (Math.floor(score / 44999) > 0) {
+      $('#notrip').append(`<hr></hr>`);
+      $('#notrip').append(`<strong>OU</strong>`);
+      $('#notrip').append(`<hr></hr>`);
+      $('#notrip').append(`<p>${Math.floor(score / 44999)} passagens</p>`);
+      $('#notrip').append(`<p>Rio de Janeiro – Miami (EUA) ou</p>`);
+      $('#notrip').append(`<p>São Paulo – Cancún (México) ou</p>`);
+      $('#notrip').append(`<p>Belo Horizonte – Punta Cana (Rep. Dominicana) ou</p>`);
+      $('#notrip').append(`<p>DIVERSOS OUTROS TRECHOS SIMILARES</p>`);
    }
 
-   else if (score < 69999) {
-      $('#notrip').append(`<p>Rio – Londres (Inglaterra)</p>`);
-      $('#notrip').append(`<p>São Paulo – Paris (França)</p>`);
-      $('#notrip').append(`<p>Belo Horizonte – Dubai (Emirados Árabes)</p>`);
-      $('#notrip').append(`<p>Salvador – Lisboa (Portugal)</p>`);
-      $('#notrip').append(`<p>Recife – Madrid (Espanha)</p>`);
+   if (Math.floor(score / 69999) > 0) {
+
+      $('#notrip').append(`<hr></hr>`);
+      $('#notrip').append(`<strong>OU</strong>`);
+      $('#notrip').append(`<hr></hr>`);
+      $('#notrip').append(`<p>${Math.floor(score / 69999)} passagens</p>`);
+      $('#notrip').append(`<p>São Paulo – Paris (França) ou</p>`);
+      $('#notrip').append(`<p>Rio – Londres (Inglaterra) ou</p>`);
+      $('#notrip').append(`<p>Belo Horizonte – Dubai (Emirados Árabes) ou</p>`);
+      $('#notrip').append(`<p>DIVERSOS OUTROS TRECHOS SIMILARES</p>`);
    }
 
-   else if (score > 70000) {
-      $('#notrip').append(`<p>Brasil – Japão</p>`);
-      $('#notrip').append(`<p>Brasil - China</p>`);
-      $('#notrip').append(`<p>Brasil - Austrália</p>`);
-      $('#notrip').append(`<p>Brasil - Maldivas</p>`);
-      $('#notrip').append(`<p>Brasil - Bora Bora</p>`);
-      $('#notrip').append(`<p>Todo o mundo!</p>`);
+   if (Math.floor(score / 70000) > 0) {
+      $('#notrip').append(`<hr></hr>`);
+      $('#notrip').append(`<strong>OU</strong>`);
+      $('#notrip').append(`<hr></hr>`);
+      $('#notrip').append(`<p>1 ou 2 passagens para qualquer lugar do mundo!</p>`);
    }
 
    //setTableContent();
@@ -297,13 +312,13 @@ $(document).ready(function () {
    $('#newSpentBtn').click(function () {
       let newSpent = { id: currentSpents[currentSpents.length - 1].id + 1, score: 0 };
       currentSpents.push(newSpent);
-      let htmlSpent = $(`<div id=spent_${newSpent.id}><div class=spentcard><div class="row spent_header"><h3 class=spenttitle>Gasto ${newSpent.id + 1}</h3><button id="removeSpent_${newSpent.id}" onclick="removeSpent(${newSpent.id})" class="removeBtn">Remover gasto</a></div><div class="form-group myform"><label class=labelspent for="exampleFormControlSelect1">Tipo de gasto:</label><select class="form-control" id="options_spent_${newSpent.id}" oninput=getCardValues(${newSpent.id})><option selected="selected">Selecione uma opção</option><option>Cartão de crédito</option><option>Pagamento de Contas</option><option>Supermercados</option><option>Farmácia</option><option>Gasolina</option><option>Uber</option><option>Eletrodomésticos ou celulares</option><option>Material de construção</option><option>Diárias em hotel</option><option>Aluguel de carros</option></select><small class=error id=box1_${newSpent.id}>Este campo não pode ser vazio</small></div><div class="form-group myform"><label class=labelspent for="exampleFormControlSelect1">Valor:</label><select class="form-control" id="values_spent_${newSpent.id}" oninput=getScoreValue(${newSpent.id})></select><small class=error id=box2_${newSpent.id} >Este campo não pode ser vazio</small></div></div></div>`)
+      let htmlSpent = $(`<div id=spent_${newSpent.id}><div class=spentcard><div class="row spent_header"><h3 class=spenttitle>Gasto ${newSpent.id + 1}</h3><button id="removeSpent_${newSpent.id}" onclick="removeSpent(${newSpent.id})" class="removeBtn">Remover gasto</a></div><div class="form-group myform"><label class=labelspent for="exampleFormControlSelect1">Tipo de gasto:</label><select class="form-control" id="options_spent_${newSpent.id}" oninput=getCardValues(${newSpent.id})><option selected="selected">Selecione uma opção</option><option>Cartão de crédito - Gasto mensal</option><option>Pagamento de Contas - Gasto mensal</option><option>Supermercados - Gasto mensal</option><option>Farmácia - Gasto mensal</option><option>Gasolina - Gasto mensal</option><option>Uber - Gasto mensal</option><option>Eletrodomésticos ou celulares - Gasto anual</option><option>Material de construção - Gasto anual</option><option>Diárias em hotel - Gasto anual</option><option>Aluguel de carros - Gasto anual</option></select><small class=error id=box1_${newSpent.id}>Este campo não pode ser vazio</small></div><div class="form-group myform"><label class=labelspent for="exampleFormControlSelect1">Valor:</label><select class="form-control" id="values_spent_${newSpent.id}" oninput=getScoreValue(${newSpent.id})></select><small class=error id=box2_${newSpent.id} >Este campo não pode ser vazio</small></div></div></div>`)
          .hide()
          .fadeIn(600);
       $('#spents').append(htmlSpent);
    });
 
-   $('#resetPage').click(function(){
+   $('#resetPage').click(function () {
       window.location.reload();
    })
 

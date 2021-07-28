@@ -37,16 +37,16 @@
                     <label class=labelspent for="exampleFormControlSelect1">Tipo de gasto:</label>
                     <select class="form-control" id="options_spent_0" oninput=getCardValues(0)>
                         <option selected="selected">Selecione uma opção</option>
-                        <option>Cartão de crédito</option>
-                        <option>Pagamento de Contas</option>
-                        <option>Supermercados</option>
-                        <option>Farmácia</option>
-                        <option>Gasolina</option>
-                        <option>Uber</option>
-                        <option>Eletrodomésticos ou celulares</option>
-                        <option>Material de construção</option>
-                        <option>Diárias em hotel</option>
-                        <option>Aluguel de carros</option>
+                        <option>Cartão de crédito - Gasto mensal</option>
+                        <option>Pagamento de Contas - Gasto mensal</option>
+                        <option>Supermercados - Gasto mensal</option>
+                        <option>Farmácia - Gasto mensal</option>
+                        <option>Gasolina - Gasto mensal</option>
+                        <option>Uber - Gasto mensal</option>
+                        <option>Eletrodomésticos ou celulares - Gasto anual</option>
+                        <option>Material de construção - Gasto anual</option>
+                        <option>Diárias em hotel - Gasto anual</option>
+                        <option>Aluguel de carros - Gasto anual</option>
                     </select>
                     <small class=error id=box1_0>Este campo não pode ser vazio</small>
                 </div>
@@ -85,10 +85,15 @@
                     <div class=result_title id=result_title_modal>
                     </div>
                     <p>milhas.</p>
-                    <div id="notrip">
+                    <div id="notrip" class="notrip">
                     </div>
                     <!-- <table class="table table-striped" id="table">
                     </table> -->
+                    <!-- <div class=parent>
+                        <div class='child inline-block-child'> _______________ </div>
+                        <div class='child inline-block-child'>OU</div>
+                        <div class='child inline-block-child'> _______________ </div>
+                    </div> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

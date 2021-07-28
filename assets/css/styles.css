@@ -223,3 +223,13 @@ button:focus { outline: none; }
    color: brown;
    display: none;
 }
+
+.inline-block-child {
+   display: inline-block;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .notrip{
+    line-height: 1;
+ }
