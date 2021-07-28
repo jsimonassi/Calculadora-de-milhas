@@ -292,10 +292,10 @@ $(document).ready(function () {
             finalScore += parseInt(spent.score);
          });
          $('#result_title').empty();
-         $('#result_title').append(`<h1>${finalScore.toLocaleString('pt-BR')}</h1>`)
+         $('#result_title').append(`<h1>${finalScore.toLocaleString('pt-BR')} Milhas.</h1>`)
 
          $('#result_title_modal').empty();
-         $('#result_title_modal').append(`<h1>${finalScore.toLocaleString('pt-BR')}</h1>`)
+         $('#result_title_modal').append(`<h1>${finalScore.toLocaleString('pt-BR')} Milhas.</h1>`)
 
          setTravelsExamples(finalScore);
 
