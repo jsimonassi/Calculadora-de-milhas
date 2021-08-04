@@ -7,7 +7,7 @@ Este foi um projeto simples, mas muito prazeroso de fazer porque consegui juntar
 
 Neste projeto implementei ao site wordpress já existente uma nova página usando Html, Css + Bootstrap e Javascript + Jquery.
 
-O projeto ainda está em fase de testes pelo cliente, mas você já pode conferir acessando: https://academilhas.com.br/calculadora_de_milhas/
+Você pode conferir suas milhas acessando: https://academilhas.com.br/calculadorademilhas/
 
 * Todos os textos e informações apresentadas são de responsabilidade do curso Academilhas.
 
